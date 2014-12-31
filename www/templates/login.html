@@ -1,25 +1,78 @@
 <ion-modal-view>
-  <ion-header-bar>
-    <h1 class="title">Login</h1>
-    <div class="buttons">
-      <button class="button button-clear" ng-click="closeLogin()">Close</button>
-    </div>
-  </ion-header-bar>
   <ion-content>
-    <form ng-submit="doLogin()">
-      <div class="list">
-        <label class="item item-input">
-          <span class="input-label">Username</span>
-          <input type="text" ng-model="loginData.username">
-        </label>
-        <label class="item item-input">
-          <span class="input-label">Password</span>
-          <input type="password" ng-model="loginData.password">
-        </label>
-        <label class="item">
-          <button class="button button-block button-positive" type="submit">Log in</button>
-        </label>
+    <div class="row">
+      <div class="bar bar-header bar-stable">
+        <h1 class="title">Review</h1>
+        <div class="buttons">
+          <div class="button button-clear" ng-click="modal.hide()"><span class="icon ion-close"></span></div>
+        </div>
       </div>
-    </form>
+    </div>
+
+    <div class="row row-center" style="padding-top:10%;">
+      <div class='col' padding-vertical="true">
+        <div class="list card">
+          <div class="item item-divider">
+            Noise Level
+          </div>
+          <div class="item range range-positive">
+            <i class="icon ion-volume-low"></i>
+            <input type="range" name="noiseLevel" min="0" max="100">
+            <i class="icon ion-volume-high"></i>
+          </div>
+
+            <div class="item item-divider">
+              Crowd Level
+            </div>
+            <div class="item range range-assertive">
+              <i class="icon ion-person"></i>
+              <input type="range" name="crowdLevel" min="0" max="100">
+              <i class="icon ion-ios-people"></i>
+            </div>
+
+            <div class="item item-divider">
+              Girl To Guy Ratio
+            </div>
+            <div class="item">
+                <i class="icon ion-man"></i>
+                <input type="range" name="crowdLevel" min="0" max="100">
+                <i class="icon ion-woman"></i>
+            </div>
+
+            <div class="item item-divider">
+              Age Range
+            </div>
+            <div class="item range range-royal">
+              <i class="icon ion-egg"></i>
+              <input type="range" name="crowdLevel" min="0" max="100" ng-model="data.ageRange">
+              <i class="icon ion-ios-people"></i>
+            </div>
+            <div class="item item-divider">{{data.rangeString}}</div>
+            <!-- <div class="item" style="margin-left: -6%; margin-top=5%;"> -->
+                
+<!--               <ion-tabs class="tabs-stable tabs-icon-only" >
+
+              <ion-tab title="21-25">
+              </ion-tab>
+
+              <ion-tab title="26-30">
+              </ion-tab>
+
+              <ion-tab title="30-40">
+              </ion-tab>
+
+              <ion-tab title="40-50">
+              </ion-tab>
+
+              <ion-tab title="50+">
+              </ion-tab>
+
+              </ion-tabs> -->
+            <!-- </div> -->
+          </div>
+        </div>
+      </div>
+
   </ion-content>
 </ion-modal-view>
+
